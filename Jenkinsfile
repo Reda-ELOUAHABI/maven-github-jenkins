@@ -7,14 +7,13 @@ pipeline{
         // }
         stage('Clean'){
             steps{
-                def mvnHome = tool name: 'apache-maven-3.8.4', type: 'maven'
-                    bat "${mvnHome}/mvn clean"
+                bat 'mvn clean'
             }
         }
         stage("Test"){
             steps{
                 def mvnHome = tool name: 'apache-maven-3.8.4', type: 'maven'
-                bat "${mvnHome}/bin/mvn test"
+                    bat "${mvnHome}/bin/mvn test"
             }
         }
         stage("Package"){
