@@ -6,7 +6,17 @@ pipeline{
     stages{
         stage('Clean'){
             steps{
-                    bat "mvn -Dmaven.test.failure.ignore=true clean package"
+                    bat "mvn -Dmaven.test.failure.ignore=true clean"
+            }
+        }
+        stage('Test'){
+            steps{
+                    bat "mvn -Dmaven.test.failure.ignore=true test"
+            }
+        }
+        stage('Package'){
+            steps{
+                    bat "mvn -Dmaven.test.failure.ignore=true package"
             }
         }
     }
