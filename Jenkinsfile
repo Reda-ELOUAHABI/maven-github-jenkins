@@ -1,19 +1,21 @@
 pipeline{
     agent any
     stages{
+        // Get maven homePath
+        def mvnHome = tool name: 'apache-maven-3.8.4', type: 'maven'
         stage("Clean"){
             steps{
-                bat 'mvn clean'
+                bat "${mvnHome}/bin/mvn clean"
             }
         }
         stage("Test"){
             steps{
-                bat 'mvn test'
+                bat "${mvnHome}/bin/mvn test"
             }
         }
         stage("Package"){
             steps{
-                bat 'mvn package'
+                bat "${mvnHome}/bin/mvn package"
             }
         }
     }
