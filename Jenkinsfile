@@ -5,7 +5,7 @@ pipeline{
         // stage('SCM checkout'){
         //     git 'https://github.com/Reda-ELOUAHABI/maven-github-jenkins'
         // }
-        stage("Clean"){
+        stage('Clean'){
             steps{
                 def mvnHome = tool name: 'apache-maven-3.8.4', type: 'maven'
                     bat "${mvnHome}/mvn clean"
