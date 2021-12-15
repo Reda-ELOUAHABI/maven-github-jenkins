@@ -31,16 +31,6 @@
     <pluginManagement>
       <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
-
-        <!-- war plugin -->
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>3.3.2</version>
-          <configuration>
-            <webappDirectory>/sample/servlet/container/deploy/directory</webappDirectory>
-          </configuration>
-        </plugin>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
@@ -80,6 +70,21 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.2.3</version>
+          <configuration>
+            <failOnMissingWebXml>false</failOnMissingWebXml>
+          </configuration>
+        </plugin>
+        <!-- war plugin -->
+        <!-- <plugin>            
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <configuration>
+            <webXml>src\main\webapp\WEB-INF\web.xml</webXml>        
+          </configuration>
+        </plugin> -->
       </plugins>
     </pluginManagement>
   </build>
