@@ -4,7 +4,7 @@ pipeline{
    
     environment {
 registry = "redaelouahabi98/nodedemo"
-registryCredential = 'dockerhub'
+registryCredential = 'docker-hub-credentials'
 dockerImage = ''
 }
   agent any
