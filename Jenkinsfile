@@ -8,6 +8,10 @@ registryCredential = 'docker-hub-credentials'
 dockerImage = ''
 }
   agent any
+  tools{
+            maven "apache-maven-3.8.4"
+        }
+
     stages {
         stage('Build') {
                steps {
