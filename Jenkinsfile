@@ -11,13 +11,13 @@ dockerImage = ''
     stages {
         stage('Build') {
                steps {
-               sh 'mvn package'
+               bat 'mvn package'
                     }
                  }
         stage('Build Docker Image') {
             steps {
                 script {
-                  sh 'docker build -t redaelouahabi98/nodedemo .'
+                  bat 'docker build -t redaelouahabi98/nodedemo .'
                 }
             }
         }
@@ -26,7 +26,7 @@ dockerImage = ''
                   steps{
                    script {
                    docker.withRegistry( '', registryCredential ) {
-                   sh 'docker push redaelouahabi98/nodedemo'
+                   bat 'docker push redaelouahabi98/nodedemo'
                    }
                    }
                    }
